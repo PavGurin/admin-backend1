@@ -1,0 +1,10 @@
+version: '3.8'
+
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - PENDING_FILMS_PATH=/opt/1win/1wintv-media
