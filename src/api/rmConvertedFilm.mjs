@@ -1,6 +1,6 @@
-import * as fs from '../utils/fs';
-import filmStore from "../models/filmStore";
-import * as mysql from "../utils/mysql";
+import * as fs from '../utils/fs.mjs';
+import filmStore from "../models/filmStore.mjs";
+import * as mysql from "../utils/mysql.mjs";
 
 export default async (ctx) => {
     const { filmPath } = ctx.params;

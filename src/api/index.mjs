@@ -1,18 +1,17 @@
 import Router from 'koa-router';
-import getPendingFilms from './getPendingFilms';
-import rmConvertedFilm from './rmConvertedFilm';
-import startFilmConvert from './startFilmConvert';
-import getToken from './getToken';
-import publishSerial from './publishSerial';
+import getPendingFilms from './getPendingFilms.mjs';
+import rmConvertedFilm from './rmConvertedFilm.mjs';
+import startFilmConvert from './startFilmConvert.mjs';
+import getToken from './getToken.mjs';
+import publishSerial from './publishSerial.mjs';
 
 const router = new Router({
-    prefix: '/api',
+  prefix: '/api',
 });
 
-
 export default router
-    .get('/list', getPendingFilms)
-    .delete('/:filmPath', rmConvertedFilm)
-    .post('/:filmPath', startFilmConvert)
-    .get('/token', getToken)
-    .get('/serial/publish', publishSerial);
+  .get('/list', getPendingFilms)
+  .delete('/:filmPath', rmConvertedFilm)
+  .post('/:filmPath', startFilmConvert)
+  .get('/token', getToken)
+  .get('/serial/publish', publishSerial);

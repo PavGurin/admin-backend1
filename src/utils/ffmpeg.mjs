@@ -24,6 +24,6 @@ export default (i, o, q = 720) =>
         `ffmpeg -y -i ${i} -i ${getWatermark(q)}`,
         `-filter_complex "scale=-1:${q},overlay=${getWatermarkPosition(q)},fps=fps=30"`,
         `-c:v h264_nvenc -preset fast`,
-        `-b:v ${bitrateMap[q]} -b:a 128k -c:a copy ${o} 2> /dev/nul` ,
+        `-b:v ${bitrateMap[q]} -b:a 128k -c:a copy ${o} 2> /dev/null` ,
     ].join(' '))
 

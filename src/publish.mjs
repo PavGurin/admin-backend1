@@ -1,9 +1,11 @@
 import Koa from 'koa';
-import api from './api/index';
-
+import cors from '@koa/cors';
+import api from './api/index.mjs';
+import { config } from './config';
 
 console.log(process.env);
 
 new Koa()
-    .use(api.routes())
-    .listen(process.env.WEB_PORT);
+  .use(cors())
+  .use(api.routes())
+  .listen(config.webPort);
