@@ -15,7 +15,7 @@ export default async (ctx) => {
   ctx.body = files.filter((n) => n !== 'status.json' && n !== '1.txt').map((name) => (
     {
       name,
-      status: typeof filmStore.getFilm(name) === 'string' ? filmStore.getFilm(name) : 'SERIAL',
+      status: filmStore.getFilm(name),
     })).sort((a, b) => {
     const [aId, bId] = [getId(a), getId(b)];
     return bId - aId;
